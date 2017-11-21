@@ -1,0 +1,3 @@
+[graph.prikazati]
+complexGraphGenerate = complexGraph.kod.complexGraphGenerate:ComplexGraphPrikaz
+

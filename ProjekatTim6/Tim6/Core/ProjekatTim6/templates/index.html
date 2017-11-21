@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <script type="text/javascript" src="{% static 'jquery.min.js' %}"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v3.js"></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+<!-- Bootstrap -->
+<link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'registration.css' %}" rel="stylesheet">
+<link href="{% static 'toastr.min.css' %} " rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+
+    <title>{{title}}</title>
+    <style>
+
+.node {
+  cursor: pointer;
+  color: #3182bd;
+
+}
+
+.link {
+  fill: none;
+  stroke: #9ecae1;
+  stroke-width: 1.5px;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+div.scroll {
+
+
+    height: 400px;
+    overflow: scroll;
+}
+
+</style>
+</head>
+<body style="background-color: #ccffff;">
+<nav class="navbar navbar-default navbar-default"
+		style="border-radius: 0px !important; margin-bottom: 0px;">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+				aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+		</div>
+<h1>  SOK Od Zove, Tim 6:</h1>
+    </div>
+</nav>
+<hr>
+<div>
+    <div>
+
+<table border="3" >
+    <h2> Plugins:</h2>
+
+    <tr border="3">
+
+        {% if ucitavanje_plugini %}
+            {% for p in ucitavanje_plugini %}
+                <td border="3">
+                <a class="form-control btn btn-success" href="{% url 'ucitavanje_plugin_broj_param' id=p.identifier %}">{{p.naziv}}</a>
+                </td>
+            {% endfor %}
+        {% else %}
+                <td border="3">
+                <h3>Nema prepoznatih plugina za ucitavanje</h3>
+                </td>
+        {% endif %}
+
+
+        {% if plugini %}
+             {% for p in plugini %}
+                <td border="3">
+                 <a class="form-control btn btn-success" href="{% url 'prikazi_plugin' id=p.identifier %}">{{p.naziv}}</a>
+
+                 {% endfor %}
+             {% else %}
+                    <td border="3">
+                 <h3>Nema prepoznatih plugina za prikaz</h3>
+                    </td>
+        {% endif %}
+
+
+
+    </tr>
+    </table>
+    </div>
+</div>
+
+<hr>
+<div>
+    {% if neophodni_parametri %}
+        {%if naziviParametara %}
+    <h5> Potrebni parametri (redom) : {{ naziviParametara | safe }} </h5>
+        {% endif %}
+        {{ neophodni_parametri|safe }}
+    {% endif %}
+</div>
+<hr>
+
+{% block content %}
+
+<table border="1px">
+    <tr border="3px">
+        <td border="3px">
+            <input type="text" id="filterx" name="filterx" placeholder="Filter">
+        </td>
+        <td>
+            <input type="text" id="searchx" name="searchx" placeholder="Search">
+        </td>
+    </tr>
+</table>
+
+
+<div position:relative; width = "100%"; height = "600px">
+
+    <div width="35%" height = "500px" style="float:right">
+        <h2>Graphview:</h2>
+        <svg id="svggraph" width="500" height="500">
+
+        </svg>
+    </div>
+
+    <div width="30%" height = "500px" style="float:right" >
+        <h2> Tree View:</h2>
+        <svg id="treesvg" width="350" height="500">
+
+    </svg>
+    </div>
+
+    <div width="35%" height = "600px" style="float:left">
+        <h2>Birdview:</h2>
+        <svg id="svgbird" width="500" height="500">
+
+        </svg>
+    </div>
+</div>
+
+<div>
+    <h2>Tree Data:</h2>
+    <div class="scroll" id="treeData">
+
+    </div>
+
+</div>
+
+<div >
+
+    <p  class="centerofh1">Softverski obrasci i komponente : Tim 6, All rights reserved!</p>
+    <p   bgcolor="#33ccff" class="centerofh1">Proudly made by: Vladan Barajevac, Nikola Gajic, Djordje Mutic and Igor Mandic</p>
+
+</div>
+
+<script>
+
+    var nodesTrue = {
+    {% for e in elementi %}
+        "{{e.id}}":{name: "{{e.id}}", attributes:"{{e.attributes}}"},
+    {% endfor %}
+    };
+
+
+    var MyData={}
+    MyData.linksTrue= [
+    {% for l in linkovi %}
+        {source:"{{l.elementParent}}",target:"{{l.elementChild}}"},
+    {% endfor %}
+    ];
+
+
+
+    var nodes=nodesTrue
+
+
+
+    MyData.links=[];
+
+    for(var smm =0; smm<MyData.linksTrue.length; smm++)
+    {
+        MyData.links.push(jQuery.extend(true, {}, MyData.linksTrue[smm]));
+    }
+
+
+    // *******************************************************************************************************
+    // *******************************************************************************************************
+    // *******************************************************************************************************
+
+
+    //IN ORDER TO MAKE PLUGINS YOU ARE GOING TO NEED 4 THINGS MANIPULATED:
+
+        //#svggraph and #svgbird are containers for implementation
+        //'MyData.links' and 'nodes' represent the data
+
+
+
+    // *******************************************************************************************************
+    // *******************************************************************************************************
+    // *******************************************************************************************************
+
+
+    // TREE DATA
+
+
+
+    treeDataRefresh(nodes);
+
+    function treeDataRefresh(nodes)
+    {
+        //document.getElementById("treeData").empty();
+        $('#treeData').empty();
+
+        var listaElemenata = document.createElement('UL');
+        listaElemenata.id='ListaElemenata';
+
+	    var propValue;
+
+
+        for(var propName in nodes) {
+            propValue = nodesTrue[propName]
+
+               // wtfilter=propName;
+                var li = document.createElement('LI');
+
+
+                var ul2 = document.createElement('UL');
+                //var li2 = document.createElement('LI');
+                for(var sx=0; sx<MyData.linksTrue.length; sx++)
+                {
+
+
+                    if(MyData.linksTrue[sx].source == propName)
+                    {
+                        var li2 = document.createElement('LI');
+                        li2.appendChild(document.createTextNode(MyData.linksTrue[sx].target));
+                        ul2.appendChild(li2);
+                    }
+                    //console.log(MyData.linksTrue[sx].source);
+                }
+                li.appendChild(document.createTextNode(propName));
+                li.id=propName+'xx';
+                li.style.color="black";
+                li.appendChild(ul2)
+                //var li2 = document.createElement('LI');
+                listaElemenata.appendChild(li);
+
+
+        }
+        document.getElementById("treeData").appendChild(listaElemenata);
+
+
+
+    }
+
+
+
+    // TREE ************************************************************************************************
+
+
+var nodetreex=null;
+var linktreex=null;
+var linkstree=null;
+var nodestree=null;
+var tree=null;
+var svgtree=null;
+showTree();
+
+function showTree()
+{
+    //console.log("TREE")
+
+
+
+   d3.select('#treesvg').selectAll('.link').remove()
+   d3.select('#treesvg').selectAll('.nodetree').remove()
+
+    var elementi_za_obradu = [
+        {% for e in elementi %}
+            "{{e.id}}",
+        {% endfor %}
+    ];
+
+    var linkovi_za_obradu =[
+        {% for l in linkovi %}
+            { elementParent: "{{l.elementParent.id}}", elementChild: "{{l.elementChild.id}}"},
+        {% endfor %}
+    ];
+
+    var first_parents = [];
+
+    for (i=0; i< elementi_za_obradu.length; i++)
+    {
+        var naslo = false;
+        for (j=0; j<linkovi_za_obradu.length; j++)
+        {
+            if(elementi_za_obradu[i]==linkovi_za_obradu[j].elementChild)
+            {
+                naslo=true;
+                break;
+            }
+        }
+        if(naslo == false)
+        {
+            first_parents.push(elementi_za_obradu[i])
+        }
+    }
+    var dd= function (parent)
+    {
+        var lista_djece = []
+        var lista_te_djece = []
+
+        for(var i =0; i< linkovi_za_obradu.length; i++)
+        {
+            if(parent == linkovi_za_obradu[i].elementParent)
+            {
+                //console.log("uslo ovde")
+                lista_djece.push(linkovi_za_obradu[i].elementChild)
+            }
+        }
+        if(lista_djece.length!=0)
+        {
+        for(var z =0; z< lista_djece.length; z++)
+        {
+            var treeElementx = {}
+            treeElementx['name']=lista_djece[z];
+            treeElementx['naziv']=lista_djece[z];
+            treeElementx['children']=dd(lista_djece[z]);
+            lista_te_djece.push(treeElementx)
+        }
+        }
+/*
+        else{
+            var treeElementx = {}
+            treeElementx['name']=lista_djece[i];
+            treeElementx['naziv']=lista_djece[i];
+            //treeElementx['children']=null;
+            lista_te_djece.push(treeElementx)
+        }
+*/
+        if(lista_te_djece.length!=0)
+        {
+        return lista_te_djece;
+        }
+        else
+        {
+            return null
+        }
+
+    }
+
+    var lista_pp_te =[];
+    for (var xm =0 ; xm<first_parents.length; xm++)
+    {
+        var treeElement ={}
+        treeElement['name']=first_parents[xm];
+        treeElement['naziv']=first_parents[xm];
+        treeElement['children']=dd(first_parents[xm]);
+
+        lista_pp_te.push(treeElement);
+    }
+
+    var data ={}
+    data['name']="Root";
+    data['naziv']="Root";
+    data['children']=lista_pp_te
+
+    svgtree=d3.select('#treesvg')/*.append("g")*/.call(d3.behavior.zoom().scaleExtent([-5, 8]).on("zoom", zoomTree)).append("g");;
+
+    tree=d3.layout.tree().size([500,1000]);
+    nodestree=tree.nodes(data);
+    linkstree=tree.links(nodestree);
+
+    var diagonal = d3.svg.diagonal()
+    .projection(function(d) { return [d.y, d.x]; });
+
+    //Dodavanje linkova
+     linktreex = svgtree.selectAll('.linktree')
+        .data(linkstree)
+        .enter().append('line')
+        .attr('class', 'link')
+        .attr('x1', function(d) { return d.source.y; })
+        .attr('y1', function(d) { return d.source.x; })
+        .attr('x2', function(d) { return d.target.y; })
+        .attr('y2', function(d) { return d.target.x; });
+
+    // Dodavanje cvorova
+    nodetreex = svgtree.selectAll('.nodetree')
+        .data(nodestree) //add
+        .enter().append('g')
+        .attr('class', 'nodetree')
+        .attr('transform', function(d){return "translate("+d.y+","+d.x+")";});
+
+    nodetreex.append('circle')
+        .attr('r', 10) //radius of circle
+        .attr('fill','yellow');
+    nodetreex.append('text').attr('fill','black')
+        .text(function(d){return d.naziv;})
+
+        function zoomTree() {
+        svgtree.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+        }
+
+}
+
+
+
+    // END TREE ************************************************************************************************
+
+
+    //*********************************************
+
+
+    //birds_view
+console
+
+    //*********************************************
+
+
+
+
+
+
+
+    var filterxx="";
+var searchxx="";
+var searchBivsi="";
+
+
+var obradivo = []
+$(document).on('keyup', '#searchx', function(e) {
+
+	searchxx=$('#searchx').val()
+
+	if(obradivo.length!=0 && searchxx!="")
+	{
+
+
+        for( var iq=0; iq<obradivo.length; iq++)
+        {
+            d3.selectAll("g#"+obradivo[iq]).selectAll('text')
+          .attr('fill','white');
+          var li = document.getElementById(obradivo[iq]+'xx');
+          li.style.color="black";
+
+        }
+        obradivo=[];
+
+	}
+
+	if(searchxx=="")
+	{
+	    obradivo=[];
+	    var pv;
+        for(var pn in nodesTrue) {
+            pv = nodesTrue[pn]
+                obradivo.push(pn)
+
+        }
+        for( var iq=0; iq<obradivo.length; iq++)
+        {
+            d3.selectAll("g#"+obradivo[iq]).selectAll('text')
+          .attr('fill','white');
+          var li = document.getElementById(obradivo[iq]+'xx');
+          li.style.color="black";
+
+        }
+        obradivo=[];
+	}
+
+    if(searchxx!="")
+    {
+        var pv;
+        for(var pn in nodesTrue) {
+            pv = nodesTrue[pn]
+
+            if(pn.indexOf(searchxx)!= -1)
+            {
+                obradivo.push(pn)
+            }
+        }
+        for( var iq=0; iq<obradivo.length; iq++)
+        {
+            d3.selectAll("g#"+obradivo[iq]).selectAll('text')
+          .attr('fill','yellow');
+          var li = document.getElementById(obradivo[iq]+'xx');
+          console.log(li)
+          li.style.color="orangered";
+
+
+            d3.select('#treesvg')/*.selectAll('.nodetree')*/.selectAll("g#"+obradivo[iq]).selectAll('text')
+            .attr('fill','yellow');
+            showTree();
+        }
+    }
+    //d3.selectAll('g#'+obradivo).selectAll('text').attr('fill','blue');
+
+    showTree();
+});
+
+
+
+
+    $(document).on('keyup', '#filterx', function(e) {
+	filterxx=$('#filterx').val()
+
+	if(filterxx!="")
+	{
+	    zobrd=[];
+	    brnod=0;
+	    var wtfilter="";
+	    var wtattr="";
+	    var propValue;
+	    nodes={}
+        for(var propName in nodesTrue) {
+            propValue = nodesTrue[propName]
+
+            if(/*propName == filterxx*/propName.indexOf(filterxx)!= -1)
+            {
+                wtfilter=propName;
+                wtattr=propValue['attributes'];
+                nodes[wtfilter] = {name:wtfilter,attributes:wtattr}
+                brnod++;
+                treeDataRefresh(nodes);
+            }
+        }
+
+        if(/*wtfilter!=""*/brnod!=0)
+        {
+
+            MyData.links=[];
+            treeDataRefresh(nodes);
+            d3.selectAll('.node').remove()
+            d3.selectAll('.link').remove()
+            refreshit();
+        }
+
+	}
+	else
+	{
+	    nodes=nodesTrue;
+
+	    MyData.links=[];
+
+        for(var smm =0; smm<MyData.linksTrue.length; smm++)
+        {
+            MyData.links.push(jQuery.extend(true, {}, MyData.linksTrue[smm]));
+        }
+        treeDataRefresh(nodes);
+
+	    d3.selectAll('.node').remove()
+	    d3.selectAll('.link').remove()
+	    refreshit();
+	}
+	showTree();
+
+});
+
+     {% if prikazFunkcija %}
+
+
+    {%if staticPrikaz %}
+        {{ staticPrikaz | safe}}
+    {% endif %}
+
+
+    refreshit();
+
+    function refreshit()
+    {
+
+    {{ prikazFunkcija | safe }}
+    }
+
+    {% endif %}
+
+
+
+</script>
+
+<div>
+
+
+</div>
+
+{% endblock %}
+
+</body>
+</html>

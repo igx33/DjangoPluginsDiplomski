@@ -1,0 +1,3 @@
+[data_import.ucitati]
+db_schema_ucitavanje_kod = DBSchemaImport.kod.ucitavanjeDBSchema:UcitavanjeIzBaze
+
