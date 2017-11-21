@@ -45,3 +45,4 @@ ProjekatTim6/static/toastr.min.js
 ProjekatTim6/templates/__init__.py
 ProjekatTim6/templates/index.html
 ProjekatTim6/templates/primer1.html
+ProjekatTim6/templates/primer2.html
