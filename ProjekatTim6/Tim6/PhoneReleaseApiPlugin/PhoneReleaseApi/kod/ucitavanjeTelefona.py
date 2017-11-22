@@ -26,13 +26,17 @@ class UcitavanjeTelefona(UcitatiService):
 def main():
 
     url = "https://fonoapi.freshpixl.com/v1/getlatest"
-    post_data = {"brand":"samsung", "token":"40431b4a3ee010cb9a655a999123054b356fc8777ae56c70"}
+    post_data = {"brand":"samsung", "token":"e2bd47e976e0118124f6254702efee5c62aca08cb9707734"}
     json_send_data = jsx.dumps(post_data)
-    request = Request(url,json_send_data)
+    request = requests.post(url,json=post_data)
     #json = urlopen(request).read().decode()
+    rec_data= []
+    rec_data = jsx.loads(request.text)
 
 
-    print(urlopen(request).read())
+    print(rec_data)
+    for i in range(0,len(rec_data)):
+        print(rec_data[i]['DeviceName'], "->", rec_data[i]['status'])
 
 if __name__ == "__main__":
     main()
