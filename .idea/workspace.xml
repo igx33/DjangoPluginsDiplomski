@@ -2,8 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fca8940-f401-496c-b1b6-e1bfecfd2a22" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/DBSchemaImportPlugin/html_import_kod.egg-info/PKG-INFO" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/DBSchemaImportPlugin/html_import_kod.egg-info/SOURCES.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/DBSchemaImportPlugin/html_import_kod.egg-info/dependency_links.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/DBSchemaImportPlugin/html_import_kod.egg-info/entry_points.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/DBSchemaImportPlugin/html_import_kod.egg-info/requires.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/DBSchemaImportPlugin/html_import_kod.egg-info/top_level.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/DBSchemaImportPlugin/html_import_kod.egg-info/zip-safe" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/DjangoCore/db.sqlite3" afterPath="$PROJECT_DIR$/ProjekatTim6/Tim6/DjangoCore/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/ComplexGraphPlugin/complexGraph/kod/complexGraphGenerate.py" afterPath="$PROJECT_DIR$/ProjekatTim6/Tim6/ComplexGraphPlugin/complexGraph/kod/complexGraphGenerate.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/models.py" afterPath="$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/templates/index.html" afterPath="$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/views.py" afterPath="$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/DBSchemaImportPlugin/DBSchemaImport/kod/ucitavanjeDBSchema.py" afterPath="$PROJECT_DIR$/ProjekatTim6/Tim6/DBSchemaImportPlugin/DBSchemaImport/kod/ucitavanjeDBSchema.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/HTMLimportPlugin/HTMLimport/kod/ucitavanjeHTMLa.py" afterPath="$PROJECT_DIR$/ProjekatTim6/Tim6/HTMLimportPlugin/HTMLimport/kod/ucitavanjeHTMLa.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/PhoneReleaseApi/kod/ucitavanjeTelefona.py" afterPath="$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/PhoneReleaseApi/kod/ucitavanjeTelefona.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/setup.py" afterPath="$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/setup.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/SimpleGraphPlugin/simpleGraph/kod/simpleGraphGenerateCode.py" afterPath="$PROJECT_DIR$/ProjekatTim6/Tim6/SimpleGraphPlugin/simpleGraph/kod/simpleGraphGenerateCode.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,33 +31,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="setup.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/setup.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ucitavanjeTelefona.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/PhoneReleaseApi/kod/ucitavanjeTelefona.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+            <state relative-caret-position="315">
+              <caret line="135" column="55" lean-forward="false" selection-start-line="135" selection-start-column="55" selection-end-line="135" selection-end-column="55" />
               <folding>
                 <element signature="e#48#66#0" expanded="true" />
               </folding>
@@ -49,13 +43,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ucitavanjeHTMLa.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/HTMLimportPlugin/HTMLimport/kod/ucitavanjeHTMLa.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1888">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="2025">
+              <caret line="135" column="35" lean-forward="false" selection-start-line="135" selection-start-column="35" selection-end-line="135" selection-end-column="35" />
               <folding>
-                <element signature="e#0#45#0" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simpleGraphGenerateCode.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/SimpleGraphPlugin/simpleGraph/kod/simpleGraphGenerateCode.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-255">
+              <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="complexGraphGenerate.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/ComplexGraphPlugin/complexGraph/kod/complexGraphGenerate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="142" column="39" lean-forward="true" selection-start-line="142" selection-start-column="39" selection-end-line="142" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,8 +92,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/models.py" />
         <option value="$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/setup.py" />
+        <option value="$PROJECT_DIR$/ProjekatTim6/Tim6/SimpleGraphPlugin/simpleGraph/kod/simpleGraphGenerateCode.py" />
         <option value="$PROJECT_DIR$/ProjekatTim6/Tim6/DBSchemaImportPlugin/DBSchemaImport/kod/ucitavanjeDBSchema.py" />
+        <option value="$PROJECT_DIR$/ProjekatTim6/Tim6/HTMLimportPlugin/HTMLimport/kod/ucitavanjeHTMLa.py" />
+        <option value="$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/views.py" />
+        <option value="$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/templates/index.html" />
+        <option value="$PROJECT_DIR$/ProjekatTim6/Tim6/ComplexGraphPlugin/complexGraph/kod/complexGraphGenerate.py" />
         <option value="$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/PhoneReleaseApi/kod/ucitavanjeTelefona.py" />
       </list>
     </option>
@@ -165,7 +187,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PhoneReleaseApiPlugin" />
+              <option name="myItemId" value="SimpleGraphPlugin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -187,11 +209,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PhoneReleaseApiPlugin" />
+              <option name="myItemId" value="SimpleGraphPlugin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PhoneReleaseApi" />
+              <option name="myItemId" value="simpleGraph" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -213,11 +235,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PhoneReleaseApiPlugin" />
+              <option name="myItemId" value="SimpleGraphPlugin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PhoneReleaseApi" />
+              <option name="myItemId" value="simpleGraph" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -243,7 +265,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HTMLimportPlugin" />
+              <option name="myItemId" value="PhoneReleaseApiPlugin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -254,7 +276,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ProjekatTim6" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/setup.py" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RunDashboard">
@@ -269,7 +291,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ucitavanjeTelefona">
+  <component name="RunManager" selected="Python.RUN SERVER">
     <configuration default="false" name="ucitavanjeTelefona" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -496,7 +518,25 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <list size="9">
+    <configuration default="false" name="PhoneReleaseApi Setup" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/Projekat1/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="false" />
+      <option name="ADD_SOURCE_ROOTS" value="false" />
+      <module name="DjangoPluginsDiplomski" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/setup.py" />
+      <option name="PARAMETERS" value="develop" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <list size="10">
       <item index="0" class="java.lang.String" itemvalue="Python.RUN SERVER" />
       <item index="1" class="java.lang.String" itemvalue="Python.MakeMigrations" />
       <item index="2" class="java.lang.String" itemvalue="Python.Migrate" />
@@ -505,7 +545,8 @@
       <item index="5" class="java.lang.String" itemvalue="Python.HTML Schema Import setup" />
       <item index="6" class="java.lang.String" itemvalue="Python.Simple Graph Setup" />
       <item index="7" class="java.lang.String" itemvalue="Python.Core Setup" />
-      <item index="8" class="java.lang.String" itemvalue="Python.ucitavanjeTelefona" />
+      <item index="8" class="java.lang.String" itemvalue="Python.PhoneReleaseApi Setup" />
+      <item index="9" class="java.lang.String" itemvalue="Python.ucitavanjeTelefona" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -530,10 +571,11 @@
     <frame x="1366" y="-1" width="1280" height="1024" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31953126" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2421875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31027028" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31027028" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -546,7 +588,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -594,21 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -616,51 +642,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/models.py">
+    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/Core/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/SimpleGraphPlugin/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-795">
-          <caret line="136" column="51" lean-forward="true" selection-start-line="136" selection-start-column="51" selection-end-line="136" selection-end-column="51" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/views.py">
+    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="285">
+          <caret line="94" column="14" lean-forward="false" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/DBSchemaImportPlugin/DBSchemaImport/kod/ucitavanjeDBSchema.py">
+    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/ComplexGraphPlugin/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="59" lean-forward="false" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/DBSchemaImportPlugin/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/HTMLimportPlugin/HTMLimport/kod/ucitavanjeHTMLa.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1888">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/DBSchemaImportPlugin/DBSchemaImport/kod/ucitavanjeDBSchema.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="143" column="51" lean-forward="false" selection-start-line="143" selection-start-column="51" selection-end-line="143" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="66" lean-forward="false" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/HTMLimportPlugin/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="104" column="17" lean-forward="false" selection-start-line="104" selection-start-column="17" selection-end-line="104" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/ComplexGraphPlugin/complexGraph/kod/complexGraphGenerate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="142" column="39" lean-forward="true" selection-start-line="142" selection-start-column="39" selection-end-line="142" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/SimpleGraphPlugin/simpleGraph/kod/simpleGraphGenerateCode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/Core/ProjekatTim6/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2025">
+          <caret line="135" column="35" lean-forward="false" selection-start-line="135" selection-start-column="35" selection-end-line="135" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/PhoneReleaseApi/kod/ucitavanjeTelefona.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+        <state relative-caret-position="315">
+          <caret line="135" column="55" lean-forward="false" selection-start-line="135" selection-start-column="55" selection-end-line="135" selection-end-column="55" />
           <folding>
             <element signature="e#48#66#0" expanded="true" />
           </folding>

@@ -91,6 +91,7 @@ class TreeElement(object):
 
 class Element(models.Model):
     id = models.CharField(max_length=240, primary_key=True)
+    #attributes = models.CharField(max_length=240)
     attributes = models.CharField(max_length=240)
 
     def __str__(self):

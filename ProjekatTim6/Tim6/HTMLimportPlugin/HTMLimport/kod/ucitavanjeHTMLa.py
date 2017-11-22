@@ -25,7 +25,7 @@ class HTMLImport(UcitatiService):
         return 1
 
     def naziviParametara(self):
-        return "Lokacija stranice"
+        return "Site address"
 
     def _pretraga_u_dubinu(self,element, prethodniID):
         string.letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'

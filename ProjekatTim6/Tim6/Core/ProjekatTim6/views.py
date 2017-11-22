@@ -126,11 +126,12 @@ def ucitavanje_plugin_broj_param(request,id):
             broj_potrebnih_podataka=i.brojPotrebnihParametara()
             naziviParametara = i.naziviParametara()
 
-    neophodni_parametri = '<form action="/ucitavanje/plugin/"><h3>'+id+':</h3>'
+    #<h3>'+id+':</h3>
+    neophodni_parametri = '<form action="/ucitavanje/plugin/">'
     for i in range(0,broj_potrebnih_podataka):
         neophodni_parametri=neophodni_parametri+'<input type="text" name="p'+str(i)+'" > '
     neophodni_parametri=neophodni_parametri+'<input type="hidden" name="id" id="id" value="'+id+'">'
-    neophodni_parametri=neophodni_parametri+'<input type="submit" value="POTVRDI">'
+    neophodni_parametri=neophodni_parametri+'<input type="submit" value="Submit">'
     return render(request, "index.html",
                       {"title": "Index2",
                        "elementi": elementi, "linkovi": linkovi, "plugini": plugini,

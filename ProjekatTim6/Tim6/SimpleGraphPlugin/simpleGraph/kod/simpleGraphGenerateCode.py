@@ -10,10 +10,10 @@ from ProjekatTim6.services.prikaz import PrikazatiService
 
 class SimpleGraphPrikaz(PrikazatiService):
     def naziv(self):
-        return "Simple graf prikaz"
+        return "Simple Graph"
 
     def identifier(self):
-        return "simple_graf_prikaz"
+        return "simple_graph_plugin"
 
     def staticPrikaz(self):
         return """

@@ -1,0 +1,3 @@
+[data_import.ucitati]
+phoneReleaseApiKod = PhoneReleaseApi.kod.ucitavanjeTelefona:UcitavanjeTelefona
+

@@ -36,7 +36,7 @@ class UcitavanjeIzBaze(UcitatiService):
     """
 
     def naziv(self):
-        return "Database Import"
+        return "Database Schema Import"
     def identifier(self):
         return "database_import_plugin"
 
@@ -141,7 +141,7 @@ class UcitavanjeIzBaze(UcitatiService):
         return 5
 
     def naziviParametara(self):
-        return "Lokacija baze, Port, Naziv sheme, username, password"
+        return "Hostname, Port, Schema, Username, Password"
 
     def ucitatiPodatke(self,*args,**kwargs):
         Element.objects.all().delete()

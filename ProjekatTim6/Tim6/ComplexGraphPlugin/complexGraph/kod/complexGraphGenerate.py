@@ -5,9 +5,9 @@ from ProjekatTim6.services.prikaz import PrikazatiService
 
 class ComplexGraphPrikaz(PrikazatiService):
     def naziv(self):
-        return "Kompleksan graf prikaz"
+        return "Complex graph"
     def identifier(self):
-        return "kompleksan_graf_prikaz"
+        return "complex_graph_plugin"
 
     def staticPrikaz(self):
         return """
@@ -64,12 +64,12 @@ class ComplexGraphPrikaz(PrikazatiService):
 
 
     force = d3.layout.force() //kreiranje force layout-a
-        .size([400, 400]) //raspoloziv prostor za iscrtavanje
+        .size([500, 500]) //raspoloziv prostor za iscrtavanje
         .nodes(d3.values(nodes)) //dodaj nodove
         .links(MyData.links) //dodaj linkove
         .on("tick", tick) //sta treba da se desi kada su izracunate nove pozicija elemenata
-        .linkDistance(300) //razmak izmedju elemenata
-        .charge(-200)//koliko da se elementi odbijaju
+        .linkDistance(500) //razmak izmedju elemenata
+        .charge(-300)//koliko da se elementi odbijaju
         .start(); //pokreni izracunavanje pozicija
 
     //var zoom2 = d3.behavior.zoom().scale(.5);
@@ -81,8 +81,8 @@ class ComplexGraphPrikaz(PrikazatiService):
 /*
     svg.append("rect")
     .attr("class", "overlay")
-    .attr("width", 500)
-    .attr("height", 500);
+    .attr("width", 600)
+    .attr("height", 600);
 */
 
 

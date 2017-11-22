@@ -1,0 +1,11 @@
+setup.py
+PhoneReleaseApi/__init__.py
+PhoneReleaseApi/kod/__init__.py
+PhoneReleaseApi/kod/ucitavanjeTelefona.py
+Phone_release_api_kod.egg-info/PKG-INFO
+Phone_release_api_kod.egg-info/SOURCES.txt
+Phone_release_api_kod.egg-info/dependency_links.txt
+Phone_release_api_kod.egg-info/entry_points.txt
+Phone_release_api_kod.egg-info/requires.txt
+Phone_release_api_kod.egg-info/top_level.txt
+Phone_release_api_kod.egg-info/zip-safe

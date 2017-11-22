@@ -54,7 +54,7 @@ div.scroll {
 					class="icon-bar"></span>
 			</button>
 		</div>
-<h1>  SOK Od Zove, Tim 6:</h1>
+<h1>  SOK: </h1>
     </div>
 </nav>
 <hr>
@@ -74,7 +74,7 @@ div.scroll {
             {% endfor %}
         {% else %}
                 <td border="3">
-                <h3>Nema prepoznatih plugina za ucitavanje</h3>
+                <h3>There are 0 importing plugins</h3>
                 </td>
         {% endif %}
 
@@ -87,7 +87,7 @@ div.scroll {
                  {% endfor %}
              {% else %}
                     <td border="3">
-                 <h3>Nema prepoznatih plugina za prikaz</h3>
+                 <h3>There are 0 visualization plugins</h3>
                     </td>
         {% endif %}
 
@@ -102,7 +102,7 @@ div.scroll {
 <div>
     {% if neophodni_parametri %}
         {%if naziviParametara %}
-    <h5> Potrebni parametri (redom) : {{ naziviParametara | safe }} </h5>
+    <h5> Required parameters (in order) : {{ naziviParametara | safe }} </h5>
         {% endif %}
         {{ neophodni_parametri|safe }}
     {% endif %}
@@ -157,9 +157,7 @@ div.scroll {
 
 <div >
 
-    <p  class="centerofh1">Softverski obrasci i komponente : Tim 6, All rights reserved!</p>
-    <p   bgcolor="#33ccff" class="centerofh1">Proudly made by: Vladan Barajevac, Nikola Gajic, Djordje Mutic and Igor Mandic</p>
-
+    <p  class="centerofh1">Softverski obrasci i komponente</p>
 </div>
 
 <script>
@@ -374,9 +372,23 @@ function showTree()
     data['naziv']="Root";
     data['children']=lista_pp_te
 
-    svgtree=d3.select('#treesvg')/*.append("g")*/.call(d3.behavior.zoom().scaleExtent([-5, 8]).on("zoom", zoomTree)).append("g");;
+    svgtree=d3.select('#treesvg')/*.append("g")*/.call(d3.behavior.zoom().scaleExtent([-5, 20]).on("zoom", zoomTree)).append("g");;
 
-    tree=d3.layout.tree().size([500,1000]);
+    //console.log("Nodes true: " + nodesTrue.length);
+    console.log("Links: "+MyData.links.length);
+
+    numOfLinks = MyData.links.length;
+
+    //tree=d3.layout.tree().size([2500,1000]);
+    if(numOfLinks<100)
+    {
+        tree=d3.layout.tree().size([1000,1000]);
+    }
+    else
+    {
+        tree=d3.layout.tree().size([numOfLinks*15,numOfLinks*10]);
+    }
+
     nodestree=tree.nodes(data);
     linkstree=tree.links(nodestree);
 
