@@ -38,6 +38,19 @@ div.scroll {
     overflow: scroll;
 }
 
+div.tooltip {
+                position: absolute;
+                text-align: center;
+                width: 350px;
+                height: 200px;
+                padding: 8px;
+                font: 10px sans-serif;
+                background: #ffff99;
+                border: solid 1px #aaa;
+                border-radius: 8px;
+                pointer-events: none;
+            }
+
 </style>
 </head>
 <body style="background-color: #ccffff;">
@@ -282,12 +295,25 @@ function showTree()
    d3.select('#treesvg').selectAll('.link').remove()
    d3.select('#treesvg').selectAll('.nodetree').remove()
 
+/*
     var elementi_za_obradu = [
         {% for e in elementi %}
             "{{e.id}}",
         {% endfor %}
     ];
+*/
 
+    var elementi_za_obradu = [
+        {% for e in elementi %}
+            {id:"{{e.id}}",attributesx:"{{e.attributes}}"},
+        {% endfor %}
+    ];
+
+/*
+    console.log(elementi_za_obradu2)
+    console.log("----------------------------------------");
+    console.log(elementi_za_obradu2[5]['attributes']);
+*/
     var linkovi_za_obradu =[
         {% for l in linkovi %}
             { elementParent: "{{l.elementParent.id}}", elementChild: "{{l.elementChild.id}}"},
@@ -301,7 +327,7 @@ function showTree()
         var naslo = false;
         for (j=0; j<linkovi_za_obradu.length; j++)
         {
-            if(elementi_za_obradu[i]==linkovi_za_obradu[j].elementChild)
+            if(elementi_za_obradu[i]['id']==linkovi_za_obradu[j].elementChild) //odje
             {
                 naslo=true;
                 break;
@@ -309,9 +335,13 @@ function showTree()
         }
         if(naslo == false)
         {
-            first_parents.push(elementi_za_obradu[i])
+            first_parents.push(elementi_za_obradu[i]['id']) //odje
+            //console.log(elementi_za_obradu[i]['id']);
         }
     }
+
+    //console.log(elementi_za_obradu);
+
     var dd= function (parent)
     {
         var lista_djece = []
@@ -332,7 +362,25 @@ function showTree()
             var treeElementx = {}
             treeElementx['name']=lista_djece[z];
             treeElementx['naziv']=lista_djece[z];
+            treeElementx['attributesx']="";
+            //console.log("OVO: k: ");
+            //console.log(lista_djece[z])
+            for(var qw =0; qw<elementi_za_obradu.length; qw++) //odje full
+            {
+                if(elementi_za_obradu[qw]['id']==lista_djece[z])
+                {
+                    //console.log(elementi_za_obradu[qw]['id'] + " isto sto  i " + lista_djece[z]);
+                    treeElementx['attributesx']=elementi_za_obradu[qw]['attributesx'];
+                    //console.log("Upisalo..");
+                    break;
+                }
+            }
+
+            //console.log(treeElement['attributesx']);
+
             treeElementx['children']=dd(lista_djece[z]);
+
+
             lista_te_djece.push(treeElementx)
         }
         }
@@ -341,6 +389,19 @@ function showTree()
             var treeElementx = {}
             treeElementx['name']=lista_djece[i];
             treeElementx['naziv']=lista_djece[i];
+
+            treeElementx['attributesx']="";
+
+            for(var qw =0; qw<elementi_za_obradu.length; qw++) //odje full
+            {
+                if(elementi_za_obradu[qw]['id']==lista_djece[i])
+                {
+                    treeElementx['attributesx']=elementi_za_obradu[qw]['attributesx'];
+
+                    break;
+                }
+            }
+
             //treeElementx['children']=null;
             lista_te_djece.push(treeElementx)
         }
@@ -362,20 +423,39 @@ function showTree()
         var treeElement ={}
         treeElement['name']=first_parents[xm];
         treeElement['naziv']=first_parents[xm];
+        //treeElement['attributesx']="";
+
+        for(var qw =0; qw<elementi_za_obradu.length; qw++) //odje full
+            {
+                if(elementi_za_obradu[qw]['id']==first_parents[xm])
+                {
+                    treeElement['attributesx']=elementi_za_obradu[qw]['attributesx'];
+
+                    break;
+                }
+            }
+
         treeElement['children']=dd(first_parents[xm]);
 
         lista_pp_te.push(treeElement);
     }
 
+
+    // Add tooltip div
+            var div = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 1e-6);
+
     var data ={}
     data['name']="Root";
     data['naziv']="Root";
+    data['attributes']="Root element.."
     data['children']=lista_pp_te
 
     svgtree=d3.select('#treesvg')/*.append("g")*/.call(d3.behavior.zoom().scaleExtent([-5, 20]).on("zoom", zoomTree)).append("g");;
 
     //console.log("Nodes true: " + nodesTrue.length);
-    console.log("Links: "+MyData.links.length);
+    //console.log("Links: "+MyData.links.length);
 
     numOfLinks = MyData.links.length;
 
@@ -389,7 +469,14 @@ function showTree()
         tree=d3.layout.tree().size([numOfLinks*15,numOfLinks*10]);
     }
 
+
     nodestree=tree.nodes(data);
+
+    console.log("DATA: ");
+    console.log(data)
+    console.log("NODES: ");
+    console.log(nodestree);
+
     linkstree=tree.links(nodestree);
 
     var diagonal = d3.svg.diagonal()
@@ -413,6 +500,9 @@ function showTree()
         .attr('transform', function(d){return "translate("+d.y+","+d.x+")";});
 
     nodetreex.append('circle')
+        .on("mouseover", mouseover)
+        .on("mousemove", function(d){mousemove(d);})
+        .on("mouseout", mouseout)
         .attr('r', 10) //radius of circle
         .attr('fill','yellow');
     nodetreex.append('text').attr('fill','black')
@@ -421,6 +511,28 @@ function showTree()
         function zoomTree() {
         svgtree.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
         }
+
+    function mouseover() {
+                div.transition()
+                .duration(300)
+                .style("opacity", 1);
+            }
+
+            function mousemove(d) {
+                div
+                .text("Info about " + d.naziv + ":" + d.attributesx)
+                .style("left", (d3.event.pageX ) + "px")
+                .style("top", (d3.event.pageY) + "px");
+                console.log(d);
+            }
+
+            function mouseout() {
+                div.transition()
+                .duration(300)
+                .style("opacity", 1e-6);
+            }
+
+
 
 }
 

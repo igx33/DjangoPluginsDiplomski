@@ -8,12 +8,8 @@ class Projekattim6Config(AppConfig):
     plugini_ucitavanje = []
 
     def ready(self):
-        #self.plugini_ucitavanje=[]
         self.plugini_prikaz=load_plugins("graph.prikazati")
         self.plugini_ucitavanje= load_plugins("data_import.ucitati");
-        #self.plugini_ucitavanje = load_plugins("dbschemaimport.ucitati");
-        #self.plugini_ucitavanje.append(load_plugins("html_import.ucitati"))
-        #self.plugini_ucitavanje.append(load_plugins("dbschemaimport.ucitati"))
 
 def load_plugins(oznaka):
     plugins = []

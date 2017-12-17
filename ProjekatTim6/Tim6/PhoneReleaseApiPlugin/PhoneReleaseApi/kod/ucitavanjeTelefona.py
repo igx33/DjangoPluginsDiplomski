@@ -63,6 +63,14 @@ class UcitavanjeTelefona(UcitatiService):
         #naziv_brenda = "sasd"
         url = "https://fonoapi.freshpixl.com/v1/getlatest"
         post_data = {"brand": naziv_brenda, "limit":70, "token": "e2bd47e976e0118124f6254702efee5c62aca08cb9707734"}
+        http_proxy = "http://proxy.uns.ac.rs:8080"
+        https_proxy = "https://proxy.uns.ac.rs:8080"
+
+        #proxyDict = {
+        #    "http": http_proxy,
+        #    "https": https_proxy
+        #}
+        #proxies = proxyDict
         request = requests.post(url, json=post_data)
         if request.text == "[[]]":
             print("Nema nista")
@@ -73,7 +81,9 @@ class UcitavanjeTelefona(UcitatiService):
             link = Link()
             link.elementParent = Element.objects.get(id="_"+naziv_brenda+"_")
             link.elementChild = Element.objects.get(id="NO_DATA")
+            print("Saving link")
             link.save()
+            print("Saving link DONE")
 
         else:
             rec_data = []
@@ -83,7 +93,9 @@ class UcitavanjeTelefona(UcitatiService):
                 print(rec_data[i]['DeviceName'], "->", rec_data[i]['status'])
 
             elemBrand = Element(id="_"+naziv_brenda,attributes="")
+            print("Saving element")
             elemBrand.save()
+            print("Saving element DONE")
 
             godine = dict()
             for i in range(0, len(rec_data)-1):
@@ -94,24 +106,32 @@ class UcitavanjeTelefona(UcitatiService):
                     #print(godina)
                     elemGod = None
                     try:
+                        print("Getting element")
                         elemGod = Element.objects.get(id="_"+godina)
                     except Element.DoesNotExist:
                         elemGod=None
+                    print("Getting element DONE")
                     if elemGod==None:
                         elemGod = Element(id="_"+godina,attributes="")
+                        print("Saving element")
                         elemGod.save()
+                        print("Saving DONE")
                         linkG = Link()
                         linkG.elementParent = elemBrand
                         linkG.elementChild = elemGod
+                        print("Saving link")
                         linkG.save()
+                        print("Saving link DONE")
 
                     mjesec = rec_data[i]['status'][mjesto + 6:]
                     mjx = replacement(mjesec)
                     elemMjesec = None
+                    print("Getting element")
                     try:
                         elemMjesec = Element.objects.get(id=mjx+"_"+elemGod.id)
                     except Element.DoesNotExist:
                         elemMjesec = None
+                    print("Getting element DONE")
                     if elemMjesec == None:
                         elemMjesec = Element(id=mjx+"_"+elemGod.id)
                         elemMjesec.save()
@@ -161,12 +181,16 @@ class UcitavanjeTelefona(UcitatiService):
                     #     atts = atts + "video:" + rec_data[i]['video'] + "<br/>"
 
                     elemDevice = Element(id=nazivUredjaja, attributes=atts)
+                    print("Saving element telefon")
                     elemDevice.save()
+                    print("Saving element telefon DONE")
 
                     link2 = Link()
                     link2.elementParent=elemMjesec
                     link2.elementChild=elemDevice
+                    print("Saving link tel")
                     link2.save()
+                    print("Saving link tel DONE")
 
         print("Zavrsila se obrada")
 

@@ -33,6 +33,7 @@ class SimpleGraphPrikaz(PrikazatiService):
 
         function zoom() {
         svg.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+        svg2.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
         }
 
     function tick(e) {
@@ -70,11 +71,14 @@ class SimpleGraphPrikaz(PrikazatiService):
 
     force = d3.layout.force() //kreiranje force layout-a
         .size([500, 500]) //raspoloziv prostor za iscrtavanje
+        .linkStrength(0)
+        .friction(0.6)
+        .gravity(0)
         .nodes(d3.values(nodes)) //dodaj nodove
         .links(MyData.links) //dodaj linkove
         .on("tick", tick) //sta treba da se desi kada su izracunate nove pozicija elemenata
-        .linkDistance(100) //razmak izmedju elemenata
-        .charge(-200)//koliko da se elementi odbijaju
+        .linkDistance(300) //razmak izmedju elemenata
+        .charge(-30)//koliko da se elementi odbijaju
         .start(); //pokreni izracunavanje pozicija
 
 
