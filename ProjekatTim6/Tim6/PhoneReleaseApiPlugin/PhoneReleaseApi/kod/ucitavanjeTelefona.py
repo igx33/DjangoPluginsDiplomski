@@ -52,9 +52,9 @@ class UcitavanjeTelefona(UcitatiService):
     def identifier(self):
         return "phone_release_api_plugin"
     def brojPotrebnihParametara(self):
-        return 1
+        return 3
     def naziviParametara(self):
-        return "Brand name"
+        return "*Brand name, http proxy, https proxy; (* - mandatory)"
     def ucitatiPodatke(self,*args,**kwargs):
         Element.objects.all().delete()
         Link.objects.all().delete()
@@ -63,15 +63,17 @@ class UcitavanjeTelefona(UcitatiService):
         #naziv_brenda = "sasd"
         url = "https://fonoapi.freshpixl.com/v1/getlatest"
         post_data = {"brand": naziv_brenda, "limit":70, "token": "e2bd47e976e0118124f6254702efee5c62aca08cb9707734"}
-        http_proxy = "http://proxy.uns.ac.rs:8080"
-        https_proxy = "https://proxy.uns.ac.rs:8080"
-
+        #http_proxy = "http://proxy.uns.ac.rs:8080"
+        #https_proxy = "https://proxy.uns.ac.rs:8080"
+        httpprox = args[0]['p1']
+        httpsprox = args[0]['p2']
         #proxyDict = {
         #    "http": http_proxy,
         #    "https": https_proxy
         #}
         #proxies = proxyDict
-        request = requests.post(url, json=post_data)
+        proxyDict = {"http":httpprox, "https":httpsprox}
+        request = requests.post(url, json=post_data, proxies = proxyDict)
         if request.text == "[[]]":
             print("Nema nista")
             el1 = Element(id="_"+naziv_brenda+"_",attributes="___")

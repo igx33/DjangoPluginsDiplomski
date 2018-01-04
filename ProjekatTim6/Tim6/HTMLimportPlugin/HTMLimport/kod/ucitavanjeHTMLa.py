@@ -22,10 +22,10 @@ class HTMLImport(UcitatiService):
 
 
     def brojPotrebnihParametara(self):
-        return 1
+        return 3
 
     def naziviParametara(self):
-        return "Site address"
+        return "*Site address, http proxy, https proxy; (* - mandatory)"
 
     def _pretraga_u_dubinu(self,element, prethodniID):
         string.letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -138,7 +138,11 @@ class HTMLImport(UcitatiService):
         #    print(a)
 
         some_url=args[0]['p0']
-        print("asdasdasdasdasdasdasdqweqweqw")
+        httpprox = args[0]['p1']
+        httpsprox = args[0]['p2']
+        print("P1 i P2 = vvvvvvvvvvvvvvvvvvvvvvvv")
+        print(httpprox)
+        print(httpsprox)
 
         #for key, value in kwargs.items():
         #    print(key + " " + value)
@@ -160,7 +164,8 @@ class HTMLImport(UcitatiService):
 
         #page = lxml.html.parse(url)
         #page = requests.get("http://www.rdrop.com/")
-        page = requests.get(some_url)
+        proxyDict = {"http": httpprox, "https": httpsprox}
+        page = requests.get(some_url, proxies = proxyDict)
         #page = urllib.urlopen("http://www.python.org")
         #s = page.read()
         #f.close()
