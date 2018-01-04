@@ -158,30 +158,6 @@ class UcitavanjeTelefona(UcitatiService):
                             atts=atts+key+": "+ak1+" | "
 
 
-                    # atts=""
-                    # if 'weight' in rec_data[i]:
-                    #     atts = atts+"weight: "+rec_data[i]['weight']+"<br/>"
-                    # if 'sim' in rec_data[i]:
-                    #     atts = atts+"sim: "+rec_data[i]['sim']+"<br/>"
-                    # if 'type' in rec_data[i]:
-                    #     atts = atts + "sc. type: " + rec_data[i]['type'] + "<br/>"
-                    # if 'resolution' in rec_data[i]:
-                    #     atts = atts + "res: " + rec_data[i]['resolution'] + "<br/>"
-                    # if 'colors' in rec_data[i]:
-                    #     atts = atts + "colors: " + rec_data[i]['colors'] + "<br/>"
-                    # if 'sensors' in rec_data[i]:
-                    #     atts = atts + "sensors: " + rec_data[i]['sensors'] + "<br/>"
-                    # if 'cpu' in rec_data[i]:
-                    #     atts = atts + "cpu:" + rec_data[i]['cpu'] + "<br/>"
-                    # if 'internal' in rec_data[i]:
-                    #     atts = atts + "internal:" + rec_data[i]['internal'] + "<br/>"
-                    # if 'os' in rec_data[i]:
-                    #     atts = atts + "os:" + rec_data[i]['os'] + "<br/>"
-                    # if 'primary_' in rec_data[i]:
-                    #     atts = atts + "primary:" + rec_data[i]['primary_'] + "<br/>"
-                    # if 'video' in rec_data[i]:
-                    #     atts = atts + "video:" + rec_data[i]['video'] + "<br/>"
-
                     elemDevice = Element(id=nazivUredjaja, attributes=atts)
                     print("Saving element telefon")
                     elemDevice.save()

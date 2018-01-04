@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7fca8940-f401-496c-b1b6-e1bfecfd2a22" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Diplomski_Igor_Mandic/Diplomski_v1.odt" afterPath="$PROJECT_DIR$/Diplomski_Igor_Mandic/Diplomski_v1.odt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/DjangoCore/db.sqlite3" afterPath="$PROJECT_DIR$/ProjekatTim6/Tim6/DjangoCore/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/HTMLimportPlugin/HTMLimport/kod/ucitavanjeHTMLa.py" afterPath="$PROJECT_DIR$/ProjekatTim6/Tim6/HTMLimportPlugin/HTMLimport/kod/ucitavanjeHTMLa.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/PhoneReleaseApi/kod/ucitavanjeTelefona.py" afterPath="$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/PhoneReleaseApi/kod/ucitavanjeTelefona.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,24 +15,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ucitavanjeTelefona.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ucitavanjeTelefona.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/PhoneReleaseApi/kod/ucitavanjeTelefona.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="56" column="34" lean-forward="false" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+            <state relative-caret-position="184">
+              <caret line="127" column="63" lean-forward="true" selection-start-line="127" selection-start-column="63" selection-end-line="127" selection-end-column="63" />
               <folding>
                 <element signature="e#48#66#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="simpleGraphGenerateCode.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/SimpleGraphPlugin/simpleGraph/kod/simpleGraphGenerateCode.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1003">
-              <caret line="35" column="12" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -567,7 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1395">
           <caret line="94" column="14" lean-forward="false" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -669,7 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1395">
           <caret line="94" column="14" lean-forward="false" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -816,7 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="74" column="23" lean-forward="false" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,7 +808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -860,9 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1545">
           <caret line="110" column="20" lean-forward="true" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -870,10 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="468" column="12" lean-forward="false" selection-start-line="468" selection-start-column="8" selection-end-line="468" selection-end-column="12" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -881,7 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -889,7 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -897,7 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="140" column="16" lean-forward="false" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -905,7 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -913,25 +885,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="142" column="49" lean-forward="false" selection-start-line="142" selection-start-column="49" selection-end-line="142" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/SimpleGraphPlugin/simpleGraph/kod/simpleGraphGenerateCode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="35" column="12" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/PhoneReleaseApiPlugin/PhoneReleaseApi/kod/ucitavanjeTelefona.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="56" column="34" lean-forward="false" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+        <state relative-caret-position="184">
+          <caret line="127" column="63" lean-forward="true" selection-start-line="127" selection-start-column="63" selection-end-line="127" selection-end-column="63" />
           <folding>
             <element signature="e#48#66#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjekatTim6/Tim6/SimpleGraphPlugin/simpleGraph/kod/simpleGraphGenerateCode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1003">
-          <caret line="35" column="12" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
